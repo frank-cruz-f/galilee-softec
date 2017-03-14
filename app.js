@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.set('port', process.env.port || 9080);
+app.set('port', process.env.PORT || 9080);
 
 app.use('/', express.static('public'));
 //app.use('/dist', express.static('dist'));
