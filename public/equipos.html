@@ -34,6 +34,9 @@
             padding-left: 60px;
             list-style: none;
         }
+        .nested-list li{
+            padding:10px;
+        }
         .nested-list a{
             color: #9d9d9d;
         }
@@ -48,9 +51,51 @@
 </head>
 
 <body>
-
+    
     <div id="wrapper">
-
+        <div class="modal fade" id="equipment-modal" tabindex="-1" role="dialog" aria-labelledby="model-label">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="model-label">Nueva Factura</h4>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label">Nombre:</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">Tipo:</label>
+                    <select class="form-control" name="" id="">
+                        <option value="">Seleccione Tipo</option>
+                        <option value="">Motor</option>
+                        <option value="">Refrigeracion</option>
+                        <option value="">Aire Acondicionado</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label"># de serie:</label>
+                    <input class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">Cantidad:</label>
+                    <input class="form-control"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="control-label">Fotografias:</label>
+                    <input class="form-control" type="file" />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Salvar Factura</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,7 +106,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Galilee</a>
+                <a class="navbar-brand" href="landing.html">Galilee</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -144,16 +189,16 @@
                         <a data-toggle="collapse" data-target="#energia"><i class="fa fa-fw fa-dashboard"></i> Gestión Energética <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="energia" class="collapse">
                             <li>
-                                <a data-toggle="collapse" data-target="#diagnostico">Diagnóstico</a>
+                                <a data-toggle="collapse" data-target="#diagnostico"><i class="fa fa-line-chart" aria-hidden="true"></i> Diagnóstico</a>
                                 <ul id="diagnostico" class="collapse nested-list">
-                                    <li><a href="/clientes.html">Clientes</a></li>
-                                    <li><a href="/facturas.html">Facturas</a></li>
-                                    <li><a href="/equipos.html">Equipos</a></li>
-                                    <li><a href="/resultados.html">Resultados</a></li>
+                                    <li><a href="/clientes.html"><i class="fa fa-users" aria-hidden="true"></i> Clientes</a></li>
+                                    <li><a href="/facturas.html"><i class="fa fa-file-text" aria-hidden="true"></i> Facturas</a></li>
+                                    <li><a href="/equipos.html"><i class="fa fa-cogs" aria-hidden="true"></i> Equipos</a></li>
+                                    <li><a href="/resultados.html"><i class="fa fa-flag-checkered" aria-hidden="true"></i> Resultados</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a data-toggle="collapse" data-target="#monitoreo">Monitoreo</a>
+                                <a data-toggle="collapse" data-target="#monitoreo"><i class="fa fa-bar-chart" aria-hidden="true"></i> Monitoreo</a>
                                 <ul id="monitoreo" class="collapse nested-list">
                                     <li><a href="">Auditoría</a></li>
                                 </ul>
@@ -166,14 +211,152 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+        <div id="page-wrapper" class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Equipos
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <select name="" id="client-select" class="form-control">
+                            <option value="">Seleccione Cliente</option>
+                            <option value="icafe">ICafe</option>
+                            <option value="masqpollo">Mas Que Pollo</option>
+                            <option value="dospinos">Dos Pinos</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <button data-toggle="modal" class="btn btn-default" data-target="#equipment-modal">Agregar Equipo</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <table id="equipment-table" class="table table-striped" style="display: none;">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Tipo</td>
+                                <td># de serie</td>
+                                <td>Cantidad</td>
+                                <td>Fotografías</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Moledora</th>
+                                <th>Motor</th>
+                                <th>12331254</th>
+                                <th>3</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                            <tr>
+                                <th>Separador</th>
+                                <th>Motor</th>
+                                <th>12331255</th>
+                                <th>1</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                            <tr>
+                                <th>Tostadora</th>
+                                <th>Horno</th>
+                                <th>12331256</th>
+                                <th>1</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="equipment-table-2" class="table table-striped" style="display: none;">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Tipo</td>
+                                <td># de serie</td>
+                                <td>Cantidad</td>
+                                <td>Fotografías</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Camara de refrigeración</th>
+                                <th>Refrigeración</th>
+                                <th>3245678</th>
+                                <th>5</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="equipment-table-3" class="table table-striped" style="display: none;">
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Tipo</td>
+                                <td># de serie</td>
+                                <td>Cantidad</td>
+                                <td>Fotografías</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Camara de refrigeración</th>
+                                <th>Refrigeración</th>
+                                <th>3245678</th>
+                                <th>15</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                            <tr>
+                                <th>Aire Acondicionado</th>
+                                <th>Aire Acondicionado</th>
+                                <th>412412a23</th>
+                                <th>5</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                            <tr>
+                                <th>Camara de congelados</th>
+                                <th>Refrigeración</th>
+                                <th>3245679-12</th>
+                                <th>15</th>
+                                <th><a href="">Ver fotos</a></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="page-wrapper" class="page-wrapper">
-            
-    </div>
+    
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        $("#client-select").change(function(e){
+            if(e.target.value === "icafe"){
+                $("#equipment-table").show();
+                $("#equipment-table-2").hide();
+                $("#equipment-table-3").hide();
+            }
+            else if(e.target.value === "masqpollo"){
+                $("#equipment-table").hide();
+                $("#equipment-table-2").show();
+                $("#equipment-table-3").hide();
+            }
+            else if(e.target.value === "dospinos"){
+                $("#equipment-table").hide();
+                $("#equipment-table-2").hide();
+                $("#equipment-table-3").show();
+            }
+            else{
+                $("#equipment-table").hide();
+                $("#equipment-table-2").hide();
+                $("#equipment-table-3").hide();
+            }
+            
+        });
+    </script>
 
 </body>
 
