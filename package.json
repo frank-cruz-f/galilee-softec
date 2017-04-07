@@ -1,5 +1,5 @@
 {
-  "name": "temp",
+  "name": "Galilee Web",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,5 +7,9 @@
     "start": "node app.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-react": "^6.23.0",
+    "gulp-obfuscate": "^0.2.9"
+  }
 }

@@ -7,16 +7,17 @@ const app = express();
 app.set('port', process.env.PORT || 9080);
 
 app.use('/', express.static('public'));
-//app.use('/dist', express.static('dist'));
-app.use('/css', express.static('css'));
+app.use('/dist', express.static('dist'));
+app.use('/css', express.static('node_modules'));
 app.use('/font-awesome', express.static('font-awesome'));
 app.use('/js', express.static('js'));
+app.use('/resources', express.static('resources'));
 
-/*// handle every other route with index.html, which will contain
+// handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
 app.get('*', function (request, response){
   response.sendFile(path.resolve('public', 'index.html'))
-})*/
+})
 
 const server = app.listen(app.get('port'), function(){
 	console.log("App started");

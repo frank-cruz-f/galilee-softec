@@ -1,0 +1,31 @@
+a{
+	color:#13D2D3;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #13D2D3;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.navbar-default .navbar-nav>li>a i{
+	color:white;
+	font-size: 28px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus,  .navbar-default .navbar-nav>li>a.active{
+    color: #FFF;
+}
+
+.navbar{
+	background-color: #06335C;
+}
+
+.navbar-nav{
+	margin-top: 26px;
+}
+
+.navbar-brand{
+	height: auto;
+	padding:0;
+}
