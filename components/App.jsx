@@ -27,11 +27,10 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={MainContainer}/>
-      <Route path="energy/" component={Energy}>
-        <Route path="diagnostic/clients" component={Clients}></Route>
-        <Route path="diagnostic/bills" component={Bills}></Route>
-        <Route path="diagnostic/equipment" component={Equipment}></Route>
-        <Route path="diagnostic/results" component={Results}></Route>
-      </Route>
+      <Route path="energy" component={Energy}></Route>
+      <Route path="diagnostic/clients" component={Clients}></Route>
+      <Route path="diagnostic/bills" component={Bills}></Route>
+      <Route path="diagnostic/equipment" component={Equipment}></Route>
+      <Route path="diagnostic/results" component={Results}></Route>
     </Route>
   </Router>, document.getElementById('root'))

@@ -70,11 +70,21 @@ a{
 .function-container{
 	width:100%;
 	text-align: center;
+	position: relative;
 }
 
 .function{
 	display: inline-block;
 	padding: 100px 100px;
+	position:absolute;
+}
+
+.function.diagnostic{
+	left: 150px;
+}
+
+.function.monitoring{
+	right: 150px;
 }
 
 .function h3{
@@ -92,4 +102,9 @@ a{
 	display: block;
 	margin: 10px 0;
 	text-transform: uppercase;
+}
+
+.clients-circle{
+	text-align: center;
+	padding-top: 20px;
 }

@@ -10,21 +10,21 @@ class Energy extends React.Component {
         			<h2>Gestión Energética</h2>
         		</div>
         		<div className="function-container">
-        			<div className="function">
+        			<div className="function diagnostic">
         				<div className="circle-container">
         				  <div className="circle"></div>
         				</div>
         				<h3>Diagnóstico</h3>
         				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue id tellus at sollicitudin. Curabitur mi tellus, tempus at nulla nec, pretium imperdiet nunc. Praesent at massa sit amet purus rutrum hendrerit.</p>
         				<div id="diagnostic-collapse" className="collapse">
-							<Link className="link" to={'/energy/diagnostic/clients'}>Clientes</Link>
-							<Link className="link" to={'/energy/diagnostic/bills'}>Facturas</Link>
-							<Link className="link" to={'/energy/diagnostic/equipment'}>Equipos</Link>
-							<Link className="link" to={'/energy/diagnostic/results'}>Resultados</Link>
+							<Link className="link" to={'/diagnostic/clients'}>Clientes</Link>
+							<Link className="link" to={'/diagnostic/bills'}>Facturas</Link>
+							<Link className="link" to={'/diagnostic/equipment'}>Equipos</Link>
+							<Link className="link" to={'/diagnostic/results'}>Resultados</Link>
         				</div>
         				<a href="#diagnostic-collapse" data-toggle="collapse"><i className="fa fa-chevron-down" aria-hidden="true"></i></a>
         			</div>
-        			<div className="function">
+        			<div className="function monitoring">
         				<div className="circle-container">
         				  <div className="circle"></div>
         				</div>
