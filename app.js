@@ -16,8 +16,8 @@ app.use('/resources', express.static('resources'));
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
 app.get('*', function (request, response){
-  response.sendFile(path.resolve('public', 'index.html'))
-})
+  response.sendFile(path.resolve(__dirname + '/public/index.html'));
+});
 
 const server = app.listen(app.get('port'), function(){
 	console.log("App started");
