@@ -4,7 +4,9 @@ const React = require('react');
 class Bills extends React.Component {
     render() {
         return (
-        	<div></div>
+        	<div>
+        		<h2>Facturas</h2>
+        	</div>
         )
     }
 }

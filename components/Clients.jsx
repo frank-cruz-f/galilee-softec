@@ -4,7 +4,9 @@ const React = require('react');
 class Clients extends React.Component {
     render() {
         return (
-        	<div></div>
+        	<div>
+        		<h4>Clientes</h4>
+        	</div>
         )
     }
 }
