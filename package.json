@@ -11,5 +11,9 @@
   "devDependencies": {
     "babel-preset-react": "^6.23.0",
     "gulp-obfuscate": "^0.2.9"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1"
   }
 }
