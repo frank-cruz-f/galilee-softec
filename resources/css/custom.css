@@ -1,5 +1,30 @@
+@font-face{
+	font-family: 'AkzidenzGroteskLight';
+	src: url('../fonts/akzidenz-grotesk-light.eot'),
+     url('../fonts/akzidenz-grotesk-light.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/akzidenz-grotesk-light.woff') format('woff'),
+     url('../fonts/akzidenz-grotesk-light.ttf') format('truetype');
+}
+
+@font-face{
+	font-family: 'AkzidenzGroteskBeSuper';
+	src: url('../fonts/akzidenz-grotesk-be-super.eot'),
+     url('../fonts/akzidenz-grotesk-be-super.eot?#iefix') format('embedded-opentype'),
+     url('../fonts/akzidenz-grotesk-be-super.woff') format('woff'),
+     url('../fonts/akzidenz-grotesk-be-super.ttf') format('truetype');
+}
+
+html, body{
+	font-family: 'AkzidenzGroteskLight', sans-serif;
+}
+
 a{
 	color:#13D2D3;
+}
+
+.btn.btn-primary{
+	background-color: #06335C;
+	color:#FFF;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -56,6 +81,7 @@ a{
     border-right-color: #13D2D3;
     border-top-color: transparent;
     transform: rotate(315deg);
+    margin: 0 auto;
 }
 
 .circle {
@@ -91,6 +117,7 @@ a{
 	color: #13D2D3;
 	font-weight: lighter;
 	text-transform: uppercase;
+	font-family: "AkzidenzGroteskLight";
 }
 
 .function p{
@@ -107,4 +134,78 @@ a{
 .clients-circle{
 	text-align: center;
 	padding-top: 20px;
+}
+
+ input.form-control[type="text"], textarea.form-control{
+	border:1px solid #13D2D3;
+	border-radius: 0px;
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	color:#06335C;
+}
+
+textarea.form-control{
+	resize: none;
+}
+
+.form-control[readonly]{
+	background-color: #FFF;
+}
+
+.create-button-container{
+	margin-bottom: 20px;
+}
+
+.list-box{
+	background-color: #F2F2F2;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.modal .list-box{
+	background-color: transparent;
+}
+
+.modal .modal-body{
+	padding: 20px 50px;
+}
+
+.list-box span.title {
+    display: table;
+    white-space: nowrap;
+    font-size: 30px;
+    color:#666666;
+    text-align: left;
+}
+
+.list-box span.title:before, .list-box span.title:after {
+      border-top: 1px solid #D5D5D5;
+      content: '';
+      display: table-cell;
+      position: relative;
+      top: 23px;
+}
+
+.list-box span.title:before { 
+	width: 10%;
+	right: 10px;
+}
+.list-box span.title:after { 
+	width: 80%;
+	left: 10px;
+}
+
+.list-box .col-sm-4{
+	padding: 0 30px;
+}
+
+.list-box label{
+	font-weight: normal;
+	font-size: 16px;
+	color:#666666;
+}
+
+.list-box .action-buttons{
+	margin-right: 40px;
+	margin-bottom: 20px;
 }
