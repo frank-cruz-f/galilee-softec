@@ -3,7 +3,7 @@ const common = require('../common');
 const Bills = require("./Bills");
 
 //Container component for the main page, stores the data that main page require
-class MainContainer extends React.Component {
+class BillsContainer extends React.Component {
 	constructor(){
 		super();
 		this.state = { billsList: [] };
@@ -73,4 +73,4 @@ class MainContainer extends React.Component {
     	});
     }
 }
-module.exports = MainContainer;
+module.exports = BillsContainer;

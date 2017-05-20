@@ -1,9 +1,12 @@
 //Common file shared through the app, contains services paths, common codes and messages.
 const API_DOMAIN = "https://galilee-api.herokuapp.com/";
 const BILLS_BASE = API_DOMAIN + "bills";
+const EQUIPMENT_BASE = API_DOMAIN + "equipment";
+
+const CLOUDINARY_UPLOAD_PRESET = 'default';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/frank18cr/image/upload';
 
 const common = {
-	totalStars: 10,
 	codes : {
 		SUCCESS: 0,
 		ERROR: 999
@@ -16,7 +19,12 @@ const common = {
 	services:{
 		GET_BILLS: BILLS_BASE + "/getBills/",
 		CREATE_BILL: BILLS_BASE + "/createBill/",
-		DELETE_BILL: BILLS_BASE + "/deleteBill/{billId}"
+		DELETE_BILL: BILLS_BASE + "/deleteBill/{billId}",
+		GET_EQUIPMENT_LIST: EQUIPMENT_BASE + "/getEquipmentList/",
+		CREATE_EQUIPMENT: EQUIPMENT_BASE + "/createEquipment/",
+		DELETE_EQUIPMENT: EQUIPMENT_BASE + "/deleteEquipment/{equipmentId}",
+		CLOUDINARY_UPLOAD_PRESET: 'default',
+		CLOUDINARY_UPLOAD_URL: 'https://api.cloudinary.com/v1_1/frank18cr/image/upload'
 	}
 }
 

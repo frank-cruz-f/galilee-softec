@@ -3,7 +3,7 @@ const MainContainer = require("./MainContainer");
 const Energy = require('./Energy');
 const Clients = require('./Clients');
 const BillsContainer = require('./BillsContainer');
-const Equipment = require('./Equipment');
+const EquipmentContainer = require('./EquipmentContainer');
 const Results = require('./Results');
 
 const React = require('react');
@@ -30,7 +30,7 @@ ReactDOM.render(
       <Route path="energy" component={Energy}></Route>
       <Route path="diagnostic/clients" component={Clients}></Route>
       <Route path="diagnostic/bills" component={BillsContainer}></Route>
-      <Route path="diagnostic/equipment" component={Equipment}></Route>
+      <Route path="diagnostic/equipment" component={EquipmentContainer}></Route>
       <Route path="diagnostic/results" component={Results}></Route>
     </Route>
   </Router>, document.getElementById('root'))

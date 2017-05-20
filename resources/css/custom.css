@@ -22,6 +22,63 @@ a{
 	color:#13D2D3;
 }
 
+hr{
+	border-top: 1px solid #AAA;
+}
+
+.modal .modal-dialog {
+  width: 90%;
+}
+.modal-body {
+  overflow-y: auto;
+}
+
+.imgs-preview-container{
+	margin-top: 20px;
+}
+
+.img-preview-container{
+	display: inline-block;
+	margin-left: 20px;
+	position: relative;
+}
+
+.img-preview{
+	max-width: 200px;
+	max-height: 200px;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.img-preview-container button{
+	position: absolute;
+	right: 0;
+	top:0;
+	background-color: transparent;
+	border: none;
+	font-size: 20px;
+	color:#c9302c;
+}
+
+.img-preview-container button:active, .img-preview-container button:focus{
+	border:none;
+	outline: none;
+}
+
+.dropzone{
+	height: 200px;
+	width: 200px;
+	border:1px dashed #A0A0A0;
+	border-radius: 20px;
+	font-size: 14px;
+	padding: 20px;
+}
+
+.dropzone p{
+	margin-top: 40%;
+	text-align: center;
+}
+
 .btn.btn-primary{
 	background-color: #06335C;
 	color:#FFF;
