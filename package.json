@@ -15,12 +15,15 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react-bootstrap": "^0.31.0",
     "react-bootstrap-modal": "^3.0.1",
     "react-bootstrap-switch": "^15.5.0-a",
+    "react-datetime": "^2.8.10",
     "react-dropzone": "^3.13.1",
     "react-image-lightbox": "^3.4.3",
+    "react-table": "^6.0.5",
     "superagent": "^3.5.2"
   }
 }

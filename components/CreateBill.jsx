@@ -1,5 +1,8 @@
-const React = require('react');
-var Modal = require('react-bootstrap-modal');
+import React from 'react';
+import Modal from 'react-bootstrap-modal';
+import Datetime from 'react-datetime';
+import moment from 'moment';
+require('moment/locale/ES');
 
 //Container component for the main page, stores the data that main page require
 class CreateBill extends React.Component {
@@ -17,10 +20,16 @@ class CreateBill extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.saveBill = this.saveBill.bind(this);
         this.clearState = this.clearState.bind(this);
+        this.cancel = this.cancel.bind(this);
      }
 
     saveBill(){
         this.props.createBill(this.state);
+        this.props.hideAddBillModule();
+        this.clearState();
+    }
+
+    cancel(){
         this.clearState();
         this.props.hideAddBillModule();
     }
@@ -31,52 +40,124 @@ class CreateBill extends React.Component {
             consumption: "",
             provider: "",
             cost: "",
-            comments: ""
+            comments: "",
+            consumptionUnity: "",
+            consumptionType: "",
+            consumptionFee: "",
+            productionUnity: ""
         });
     }
 
     handleChange(e){
-        this.setState({[e.target.name]: e.target.value});
+        if(e._isAMomentObject){
+            this.setState({period: e.toISOString()});
+        }
+        else{
+            this.setState({[e.target.name]: e.target.value});
+        }
+        
     }
 
     render() {
         return (
-        	<div>
-        	<Modal show={this.props.open} aria-labelledby="ModalHeader">
-                <Modal.Header closeButton>
-                    <Modal.Title id='ModalHeader'>Nueva Factura</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <fieldset className="bill list-box">
-                        <div className="form-group">
+            <div>
+        	<div className="row">
+                <div className="col-sm-12">
+                    <h2>Factura</h2>
+                    <hr/>
+                </div>
+        	   <div className="col-sm-3">
+                <div className="form-group">
                             <label className="control-label">Periodo</label>
-                            <input type="text" className="form-control" name="period" value={this.state.period} onChange={this.handleChange}/>
+                            <Datetime dateFormat="MMMM YYYY" name="period" onChange={this.handleChange} closeOnSelect={true}/>
                         </div>
-                        <div className="form-group">
+               </div>
+               <div className="col-sm-3">
+                <div className="form-group">
                             <label className="control-label">Consumo</label>
                             <input type="text" className="form-control" name="consumption" value={this.state.consumption} onChange={this.handleChange}/>
                         </div>
-                        <div className="form-group">
+               </div>
+               <div className="col-sm-3">
+                    <div className="form-group">
+                            <label className="control-label">Unid. de Consumo</label>
+                            <select name="" id="" className="form-control" name="consumptionUnity" value={this.state.consumptionUnity} onChange={this.handleChange}>
+                                <option value="">--</option>
+                                <option value="l">litros</option>
+                                <option value="kw">kw</option>
+                                <option value="kwh">kwh</option>
+                                <option value="fp">fp.</option>
+                                <option value="m3">m3</option>
+                            </select>
+                    </div>
+                </div>
+               <div className="col-sm-3">
+               <div className="form-group">
+                            <label className="control-label">Tipo de Consumo</label>
+                            <select name="" id="" className="form-control" name="consumptionType" value={this.state.consumptionType} onChange={this.handleChange}>
+                                <option value="">--</option>
+                                <option value="gas">gas</option>
+                                <option value="bunker">bunker</option>
+                                <option value="diesel">diesel</option>
+                                <option value="gasolina">gasolina</option>
+                                <option value="madera">madera</option>
+                                <option value="agua">agua</option>
+                                <option value="electricidad">electricidad</option>
+                            </select>
+                    </div>
+               </div>
+               <div className="col-sm-3">
+               <div className="form-group">
+                            <label className="control-label">Tarifa</label>
+                            <select name="" id="" className="form-control" name="consumptionFee" value={this.state.consumptionFee} onChange={this.handleChange}>
+                                <option value="">--</option>
+                                <option value="¢90 kwh">¢90 kwh</option>
+                                <option value="¢120 kwh">¢120 kwh</option>
+                                <option value="¢200 m3">¢200 m3</option>
+                                <option value="¢300 m3">¢300 m3</option>
+                            </select>
+                    </div>
+               </div>
+               <div className="col-sm-3">
+                <div className="form-group">
                             <label className="control-label">Proveedor</label>
-                            <input type="text" className="form-control" name="provider" value={this.state.provider} onChange={this.handleChange}/>
+                            <select name="" id="" className="form-control" name="provider" value={this.state.provider} onChange={this.handleChange}>
+                                <option value="">--</option>
+                                <option value="Jasec">Jasec</option>
+                                <option value="ICE">ICE</option>
+                                <option value="CNFL">CNFL</option>
+                                <option value="AyA">AyA</option>
+                            </select>
                         </div>
-                        <div className="form-group">
+               </div>
+               <div className="col-sm-3">
+               <div className="form-group">
+                            <label className="control-label">Unidad de Producción</label>
+                            <input type="text" className="form-control" name="productionUnity" value={this.state.productionUnity} onChange={this.handleChange}/>
+                    </div>
+               </div>
+               <div className="col-sm-3">
+               <div className="form-group">
                             <label className="control-label">Costo</label>
                             <input type="text" className="form-control" name="cost" value={this.state.cost} onChange={this.handleChange}/>
                         </div>
-                        <div className="form-group">
+               </div>
+               <div className="col-sm-3">
+                <div className="form-group">
                             <label className="control-label">Comentarios</label>
                             <textarea className="form-control" name="comments" value={this.state.comments} onChange={this.handleChange}></textarea>
                         </div>
-                        <span className="clearfix"></span>
-                    </fieldset>
-                </Modal.Body>
-                <Modal.Footer>
-                    <button className='btn btn-default' onClick={this.props.hideAddBillModule}>Cancelar</button>
-                    <button className='btn btn-primary' onClick={this.saveBill}>Guardar</button>
-                </Modal.Footer>
-            </Modal>
-        	</div>
+               </div>
+               </div>
+               <div className="row">
+                <div className="col-sm-12">
+                    <div className="pull-right">
+                    <button className="btn btn-default" onClick={this.cancel}>Cancelar</button>
+                    <button className="btn btn-primary" onClick={this.saveBill}>Guardar</button>
+                    </div>                    
+                </div>
+               </div>
+               </div>
         )
     }
 }

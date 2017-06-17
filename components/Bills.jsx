@@ -1,6 +1,7 @@
 const React = require('react');
 const CreateBill = require("./CreateBill");
 const Bill = require("./Bill");
+const BillsDatatable = require("./BillsDatatable");
 
 //Container component for the main page, stores the data that main page require
 class Bills extends React.Component {
@@ -44,11 +45,13 @@ class Bills extends React.Component {
 				<h4>ICafe</h4>
         	</div>
         	<div className="col-sm-9">
-        		{this.props.bills.map((bill) => {
-            		return <Bill bill={bill} key={bill._id} deleteBill={this.props.deleteBill} loadData={this.props.loadData}/>
-            	})}
+                <h2>Facturas</h2>
+                <hr/>
+        		<BillsDatatable bills={this.props.bills} deleteBill={this.props.deleteBill}/>
+                 { this.state.open ? <CreateBill hideAddBillModule={this.hideAddBillModule} createBill={this.props.createBill}/> : null }
         	</div>
-        	<CreateBill open={this.state.open} hideAddBillModule={this.hideAddBillModule} createBill={this.props.createBill}/>
+
+        	
         	</div>
         )
     }

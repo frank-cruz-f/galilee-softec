@@ -15,7 +15,7 @@ class Energy extends React.Component {
         				  <div className="circle"></div>
         				</div>
         				<h3>Diagnóstico</h3>
-        				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue id tellus at sollicitudin. Curabitur mi tellus, tempus at nulla nec, pretium imperdiet nunc. Praesent at massa sit amet purus rutrum hendrerit.</p>
+        				<p>Evaluación sistemática y técnica que permite determinar los potenciales de ahorro de energía, según indicadores de gestión que no afecten la cantidad ni calidad de las actividades desarrolladas en la empresa.</p>
         				<div id="diagnostic-collapse" className="collapse">
 							<Link className="link" to={'/diagnostic/clients'}>Clientes</Link>
 							<Link className="link" to={'/diagnostic/bills'}>Facturas</Link>
@@ -29,7 +29,7 @@ class Energy extends React.Component {
         				  <div className="circle"></div>
         				</div>
         				<h3>Monitoreo</h3>
-        				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent congue id tellus at sollicitudin. Curabitur mi tellus, tempus at nulla nec, pretium imperdiet nunc. Praesent at massa sit amet purus rutrum hendrerit.</p>
+        				<p>En esta etapa se establecen normas de consumo de energía, de mantenimiento y de operación, así como el método que permita dar seguimiento permanente al programa.</p>
         				<div id="monitoring-collapse" className="collapse">
 							<Link className="link" to={'/energy/monitoring/audit'}>Auditoría</Link>
         				</div>
