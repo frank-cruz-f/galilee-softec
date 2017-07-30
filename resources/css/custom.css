@@ -381,11 +381,12 @@ textarea.form-control{
 
 .module-box:hover .title-container h2{
 	font-family: AkzidenzGroteskBeSuper;
+	font-size: 23pt;
 	color: #002644;
 }
 
 .module-box .title-container h3{
-	font-size: 23pt;
+	font-size: 24pt;
 	margin-bottom: 5px;
 }
 
