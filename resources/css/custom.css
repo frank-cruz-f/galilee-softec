@@ -450,3 +450,7 @@ textarea.form-control{
 .equipment-options .col-sm-6{
 	padding: 25px 40px;
 }
+
+.modal-dialog .list-box{
+	color: #000;
+}
