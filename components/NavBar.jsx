@@ -19,13 +19,16 @@ class NavBar extends React.Component {
               <div className="container-fluid">
                 <div className="navbar-header">
                   <Link to={'/'} className="navbar-brand">
-                    <img src="/resources/images/logo_cyan_sm.png" alt=""/>
+                    <img className="logo" src="/resources/images/logo.png" alt=""/>
                   </Link>
                 </div>
                 <div className="collapse navbar-collapse">
                   <ul className="nav navbar-nav navbar-right">
-                      <li><Link to={'/energy/'} role="button" activeClassName="active">Gestión Energética</Link></li>
-                      <li><a href="#">Link</a></li>
+                      <li><a href="#">Acerca de nosotros</a></li>
+                      <span>|</span>
+                      <li><a href="#">¿Qué hacemos?</a></li>
+                      <span>|</span>
+                      <li><a href="#">Contacto</a></li>
                       <li><a href="#"><i className="fa fa-bars" aria-hidden="true"></i></a></li>
                       <li><a href="#"><i className="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
                   </ul>

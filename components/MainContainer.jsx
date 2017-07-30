@@ -4,6 +4,7 @@ const React = require('react');
 class MainContainer extends React.Component {
     render() {
         return (
+            <div>
         	<div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
         	  <ol className="carousel-indicators">
         	    <li data-target="#carousel-example-generic" data-slide-to="0" className="active"></li>
@@ -46,6 +47,32 @@ class MainContainer extends React.Component {
         	    <span className="sr-only">Next</span>
         	  </a>
         	</div>
+            <div className="modules">
+                <div className="module-box">
+                    <div className="title-container">
+                        <h3>Módulo</h3>
+                        <h2>Gestión Energética</h2>
+                    </div>
+                    <ul>
+                        <li>Diagnóstico</li>
+                        <li>Monitoreo</li>
+                    </ul>
+                </div>
+                <div className="module-box active">
+                    <div className="title-container">
+                        <h3>Módulo</h3>
+                        <h2>Gestión De Calidad</h2>
+                    </div>
+                    
+                </div>
+                <div className="module-box">
+                    <div className="title-container">
+                        <h3>Módulo</h3>
+                        <h2>Gestión De Mantenimiento</h2>
+                    </div>
+                </div>
+            </div>
+            </div>
         )
     }
 }

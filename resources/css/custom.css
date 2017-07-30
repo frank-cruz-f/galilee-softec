@@ -16,6 +16,7 @@
 
 html, body{
 	font-family: 'AkzidenzGroteskLight', sans-serif;
+	background-color: #06335C;
 }
 
 a{
@@ -85,7 +86,7 @@ hr{
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #13D2D3;
+    color: #FFF;
     text-transform: uppercase;
     font-size: 14px;
 }
@@ -97,14 +98,20 @@ hr{
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus,  .navbar-default .navbar-nav>li>a.active{
-    color: #FFF;
+    color: #13D2D3;
 }
 
 .navbar{
-	background-color: #06335C;
 	margin-bottom: 0;
 	border-radius: 0;
 	border:none;
+	margin-top: 62px;
+	background-color: transparent;
+}
+
+.navbar .logo{
+	width: 218px;
+	margin-left: 45px;
 }
 
 .navbar-nav{
@@ -119,7 +126,7 @@ hr{
 .header-container{
 	text-align: center;
 	color:#FFF;
-	background-color: #06335C;
+	background-color: transparent;
 }
 
 .header-container h2{
@@ -331,4 +338,66 @@ textarea.form-control{
 }
 .rdt-arrow-down-active,.rdt-arrow-down-inactive:hover {
     border-top: 5px solid #333;
+}
+
+.carousel.slide{
+	margin-bottom: 77px;
+}
+
+.modules{
+	margin: 0 auto;
+}
+
+.module-box{
+	width: 328px;
+	height: 294px;
+	padding: 20px 40px;
+	color: #FFF;
+	background-color: #002644;
+	float: left;
+	margin-right: 75px;
+	margin-bottom: 20px;
+}
+
+.module-box:hover{
+	background-color: #13D2D3;
+}
+
+.module-box:last-child{
+	margin-right: 0px;
+}
+
+.module-box .title-container{
+	padding: 0 10px;
+	border-left: 1px solid #FFF;
+	text-transform: uppercase;
+}
+
+.module-box:hover .title-container{
+	border-bottom: 1px solid #FFF;
+}
+
+.module-box:hover .title-container h2{
+	font-family: AkzidenzGroteskBeSuper;
+	color: #002644;
+}
+
+.module-box .title-container h3{
+	font-size: 23pt;
+	margin-bottom: 5px;
+}
+
+.module-box .title-container h2{
+	font-size: 25pt;
+	color: #13D2D3;
+	margin-top: 5px;
+}
+
+.module-box ul li{
+	display: none;
+	list-style: none;
+}
+
+.module-box:hover ul li{
+	display: block;
 }
