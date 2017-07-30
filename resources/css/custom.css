@@ -345,17 +345,19 @@ textarea.form-control{
 }
 
 .modules{
-	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .module-box{
-	width: 328px;
+	width: 350px;
 	height: 294px;
 	padding: 20px 40px;
 	color: #FFF;
 	background-color: #002644;
 	float: left;
-	margin-right: 75px;
+	margin-right: 50px;
 	margin-bottom: 20px;
 }
 

@@ -48,7 +48,7 @@ class MainContainer extends React.Component {
         	  </a>
         	</div>
             <div className="modules">
-                <div className="module-box">
+                <div className="module-box" onClick="">
                     <div className="title-container">
                         <h3>Módulo</h3>
                         <h2>Gestión Energética</h2>
@@ -58,7 +58,7 @@ class MainContainer extends React.Component {
                         <li>Monitoreo</li>
                     </ul>
                 </div>
-                <div className="module-box active">
+                <div className="module-box" onClick="">
                     <div className="title-container">
                         <h3>Módulo</h3>
                         <h2>Gestión De Calidad</h2>
@@ -66,7 +66,7 @@ class MainContainer extends React.Component {
                     
                 </div>
                 <div className="module-box">
-                    <div className="title-container">
+                    <div className="title-container" onClick="">
                         <h3>Módulo</h3>
                         <h2>Gestión De Mantenimiento</h2>
                     </div>
