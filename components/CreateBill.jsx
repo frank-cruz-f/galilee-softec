@@ -60,7 +60,7 @@ class CreateBill extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="function-add">
         	<div className="row">
                 <div className="col-sm-12">
                     <h2>Factura</h2>

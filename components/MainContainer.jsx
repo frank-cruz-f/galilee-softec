@@ -1,7 +1,20 @@
 const React = require('react');
+const Link = require('react-router').Link;
 
 //Container component for the main page, stores the data that main page require
 class MainContainer extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            active: ""
+        };
+        this.setActive = this.setActive.bind(this);
+    }
+
+    setActive(id){
+        this.setState({active: id});
+    }
+
     render() {
         return (
             <div>
@@ -48,25 +61,25 @@ class MainContainer extends React.Component {
         	  </a>
         	</div>
             <div className="modules">
-                <div className="module-box" onclick="">
+                <div className={this.state.active === 'energy' ? 'module-box active' : 'module-box'} onClick={this.setActive.bind(this, 'energy')}> 
                     <div className="title-container">
                         <h3>Módulo</h3>
                         <h2>Gestión Energética</h2>
                     </div>
                     <ul>
-                        <li>Diagnóstico</li>
+                        <li><Link className="link" to={'/diagnostic/'}>Diagnóstico</Link></li>
                         <li>Monitoreo</li>
                     </ul>
                 </div>
-                <div className="module-box" onclick="">
+                <div className={this.state.active === 'quality' ? 'module-box active' : 'module-box'} onClick={this.setActive.bind(this, 'quality')}>
                     <div className="title-container">
                         <h3>Módulo</h3>
                         <h2>Gestión De Calidad</h2>
                     </div>
                     
                 </div>
-                <div className="module-box">
-                    <div className="title-container" onclick="">
+                <div className={this.state.active === 'maintenance' ? 'module-box active' : 'module-box'}  onClick={this.setActive.bind(this, 'maintenance')}>
+                    <div className="title-container">
                         <h3>Módulo</h3>
                         <h2>Gestión De Mantenimiento</h2>
                     </div>

@@ -26,33 +26,31 @@ class Bills extends React.Component {
 
     render() {
         return (
-        	<div>
-        	<div className="header-container">
-        		<h2>Gestión Energética</h2>
-        	</div>
-        	<div className="create-button-container">
-        	  <hr/>
-        	  <button className="btn btn-default pull-right" onClick={this.showAddBillModule}>Agregar Factura</button>
-        	  <div className="clearfix"></div>
-        	</div>
-        	<div className="col-sm-3 clients-circle">
-				<div className="circle-container">
-				  <div className="circle"></div>
-				</div>
-				<h4>Diagnóstico</h4>
-				<span>Facturas</span>
-				<hr/>
-				<h4>ICafe</h4>
-        	</div>
-        	<div className="col-sm-9">
-                <h2>Facturas</h2>
-                <hr/>
-        		<BillsDatatable bills={this.props.bills} deleteBill={this.props.deleteBill}/>
-                 { this.state.open ? <CreateBill hideAddBillModule={this.hideAddBillModule} createBill={this.props.createBill}/> : null }
-        	</div>
-
+            <div>
+                <div className="module">
+                    <div className="module-title-container">
+                        <div className="module-title">
+                            <h3>Módulo</h3>
+                            <h2>GESTIÓN ENERGÉTICA</h2>
+                            <h2>Diánostico</h2>
+                            <hr/>
+                        </div>
+                    </div>
+                </div>
+                <div className="function-container">
+                    <h2 className="function-title">Facturas</h2>
+                    <div className="create-button-container">
+                      <hr/>
+                      <button className="btn btn-default pull-right" onClick={this.showAddBillModule}>Agregar Factura</button>
+                      <div className="clearfix"></div>
+                    </div>
+                    <div className="col-sm-12 table-container">
+                        <BillsDatatable bills={this.props.bills} deleteBill={this.props.deleteBill}/>
+                         { this.state.open ? <CreateBill className="function-add" hideAddBillModule={this.hideAddBillModule} createBill={this.props.createBill}/> : null }
+                    </div>
+                </div>
+            </div>
         	
-        	</div>
         )
     }
 }

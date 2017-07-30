@@ -27,29 +27,28 @@ class EquipmentList extends React.Component {
     render() {
         return (
             <div>
-            <div className="header-container">
-                <h2>Gestión Energética</h2>
-            </div>
-            <div className="create-button-container">
-              <hr/>
-              <button className="btn btn-default pull-right" onClick={this.showCreateEquipmentModule}>Agregar Equipo</button>
-              <div className="clearfix"></div>
-            </div>
-            <div className="col-sm-2 clients-circle">
-                <div className="circle-container">
-                  <div className="circle"></div>
+                <div className="module">
+                    <div className="module-title-container">
+                        <div className="module-title">
+                            <h3>Módulo</h3>
+                            <h2>GESTIÓN ENERGÉTICA</h2>
+                            <h2>Diánostico</h2>
+                            <hr/>
+                        </div>
+                    </div>
                 </div>
-                <h4>Diagnóstico</h4>
-                <span>Equipos</span>
-            </div>
-            <div className="col-sm-10">
-            </div>
-            <div className="col-sm-9">
-                {this.props.equipmentList.map((equipment) => {
-                    return <Equipment equipment={equipment} key={equipment._id} deleteEquipment={this.props.deleteEquipment} loadData={this.props.loadData}/>
-                })}
-            </div>
-            <CreateEquipment open={this.state.open} hideCreateEquipmentModule={this.hideCreateEquipmentModule} createEquipment={this.props.createEquipment} uploadImages={this.props.uploadImages}/>
+                <div className="function-container">
+                    <div className="create-button-container">
+                      <button className="btn btn-default pull-right" onClick={this.showCreateEquipmentModule}>Agregar Equipo</button>
+                      <div className="clearfix"></div>
+                    </div>
+                    <div className="col-sm-12">
+                        {this.props.equipmentList.map((equipment) => {
+                            return <Equipment equipment={equipment} key={equipment._id} deleteEquipment={this.props.deleteEquipment} loadData={this.props.loadData}/>
+                        })}
+                    </div>
+                    <CreateEquipment open={this.state.open} hideCreateEquipmentModule={this.hideCreateEquipmentModule} createEquipment={this.props.createEquipment} uploadImages={this.props.uploadImages}/>
+                </div>
             </div>
         )
     }

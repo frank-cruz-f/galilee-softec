@@ -134,7 +134,7 @@ class CreateEquipment extends React.Component {
     render() {
         return (
         	<div>
-        	<Modal show={this.props.open} aria-labelledby="ModalHeader">
+        	<Modal show={this.props.open} aria-labelledby="ModalHeader" className="equipment-modal">
                 <Modal.Header closeButton>
                     <Modal.Title id='ModalHeader'>Nuevo Equipo</Modal.Title>
                 </Modal.Header>
@@ -211,23 +211,22 @@ class CreateEquipment extends React.Component {
                                 <p>Seleccione las siguientes opciones, por favor solicitar copia fisica o digital para cualquier opción si la respuesta es afirmativa.</p>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene planos del diseño eléctrico?</label></div>
-                                <br/>
-                                <div className="col-sm-12"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="electricDesignPlan" onText="Si" offText="No"/></div>
+                        <div className="row equipment-options">
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene planos del diseño eléctrico?</label></div>
+                                <div className="col-sm-4"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="electricDesignPlan" onText="Si" offText="No"/></div>
                             </div>
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene manuales de los principales equipos consumidores?</label></div>
-                                <div className="col-sm-12"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="mainEquipmentManuals" onText="Si" offText="No"/></div>
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene manuales de los principales equipos consumidores?</label></div>
+                                <div className="col-sm-4"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="mainEquipmentManuals" onText="Si" offText="No"/></div>
                             </div>
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene información demostrable de horas de funcionamiento de los equipos?</label></div>
-                                <div className="col-sm-12"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="equipmentOperationInfo" onText="Si" offText="No"/></div>
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene información demostrable de horas de funcionamiento de los equipos?</label></div>
+                                <div className="col-sm-4"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="equipmentOperationInfo" onText="Si" offText="No"/></div>
                             </div>
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene información demostrable de programa de mantenimiento de los equipos?</label></div>
-                                <div className="col-sm-12"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="equipmentMaintenanceProgram" onText="Si" offText="No"/></div>
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene información demostrable de programa de mantenimiento de los equipos?</label></div>
+                                <div className="col-sm-4"><Switch onChange={(el, state) => this.handleSwitch(el, state)} defaultValue={false} name="equipmentMaintenanceProgram" onText="Si" offText="No"/></div>
                             </div>
                         </div>
                         <span className="clearfix"></span>

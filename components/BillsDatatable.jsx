@@ -61,7 +61,7 @@ class BillsDatatable extends React.Component {
 	    filterable: false
 	  }];
 	 
-	  return (<ReactTable data={this.props.bills} columns={columns} minRows={this.props.bills.length} showPagination={false} filterable={true}/>)
+	  return (<ReactTable data={this.props.bills} className="datatable" columns={columns} minRows={this.props.bills.length} showPagination={false} filterable={true}/>)
 	}
 }
 

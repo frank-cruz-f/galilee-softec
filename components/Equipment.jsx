@@ -114,22 +114,22 @@ class Equipment extends React.Component {
                         <div className="col-sm-12">
                                 <p>Seleccione las siguientes opciones, por favor solicitar copia fisica o digital para cualquier opción si la respuesta es afirmativa.</p>
                             </div>
-                        <div className="row">
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene planos del diseño eléctrico?</label></div>
-                                <div className="col-sm-12"><Switch defaultValue={this.props.equipment.electricDesignPlan} name="electricDesignPlan" onText="Si" offText="No" disabled={true}/></div>
+                        <div className="row equipment-options">
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene planos del diseño eléctrico?</label></div>
+                                <div className="col-sm-4"><Switch defaultValue={this.props.equipment.electricDesignPlan} name="electricDesignPlan" onText="Si" offText="No" disabled={true}/></div>
                             </div>
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene manuales de los principales equipos consumidores?</label></div>
-                                <div className="col-sm-12"><Switch defaultValue={this.props.equipment.mainEquipmentManuals} name="mainEquipmentManuals" onText="Si" offText="No" disabled={true}/></div>
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene manuales de los principales equipos consumidores?</label></div>
+                                <div className="col-sm-4"><Switch defaultValue={this.props.equipment.mainEquipmentManuals} name="mainEquipmentManuals" onText="Si" offText="No" disabled={true}/></div>
                             </div>
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene información demostrable de horas de funcionamiento de los equipos?</label></div>
-                                <div className="col-sm-12"><Switch defaultValue={this.props.equipment.equipmentOperationInfo} name="equipmentOperationInfo" onText="Si" offText="No" disabled={true}/></div>
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene información demostrable de horas de funcionamiento de los equipos?</label></div>
+                                <div className="col-sm-4"><Switch defaultValue={this.props.equipment.equipmentOperationInfo} name="equipmentOperationInfo" onText="Si" offText="No" disabled={true}/></div>
                             </div>
-                            <div className="col-sm-3">
-                                <div className="col-sm-12"><label className="control-label">¿Tiene información demostrable de programa de mantenimiento de los equipos?</label></div>
-                                <div className="col-sm-12"><Switch defaultValue={this.props.equipment.equipmentMaintenanceProgram} name="equipmentMaintenanceProgram" onText="Si" offText="No" disabled={true}/></div>
+                            <div className="col-sm-6">
+                                <div className="col-sm-8"><label className="control-label">¿Tiene información demostrable de programa de mantenimiento de los equipos?</label></div>
+                                <div className="col-sm-4"><Switch defaultValue={this.props.equipment.equipmentMaintenanceProgram} name="equipmentMaintenanceProgram" onText="Si" offText="No" disabled={true}/></div>
                             </div>
                         </div>
                         <div className="row">

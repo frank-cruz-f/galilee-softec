@@ -1,6 +1,6 @@
 const NavBar = require('./NavBar');
 const MainContainer = require("./MainContainer");
-const Energy = require('./Energy');
+const Diagnostic = require('./Diagnostic');
 const Clients = require('./Clients');
 const BillsContainer = require('./BillsContainer');
 const EquipmentContainer = require('./EquipmentContainer');
@@ -27,7 +27,7 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={MainContainer}/>
-      <Route path="energy" component={Energy}></Route>
+      <Route path="diagnostic" component={Diagnostic}></Route>
       <Route path="diagnostic/clients" component={Clients}></Route>
       <Route path="diagnostic/bills" component={BillsContainer}></Route>
       <Route path="diagnostic/equipment" component={EquipmentContainer}></Route>
