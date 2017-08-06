@@ -111,10 +111,11 @@ class CreateBill extends React.Component {
                             <label className="control-label">Tarifa</label>
                             <select name="" id="" className="form-control" name="consumptionFee" value={this.state.consumptionFee} onChange={this.handleChange}>
                                 <option value="">--</option>
-                                <option value="¢90 kwh">¢90 kwh</option>
-                                <option value="¢120 kwh">¢120 kwh</option>
-                                <option value="¢200 m3">¢200 m3</option>
-                                <option value="¢300 m3">¢300 m3</option>
+                                <option value="T-CO">T-CO</option>
+                                <option value="T-IN">T-IN</option>
+                                <option value="T-CS">T-CS</option>
+                                <option value="T-R">T-R</option>
+                                <option value="T-MT">T-MT</option>
                             </select>
                     </div>
                </div>
@@ -132,8 +133,26 @@ class CreateBill extends React.Component {
                </div>
                <div className="col-sm-3">
                <div className="form-group">
-                            <label className="control-label">Unidad de Producción</label>
-                            <input type="text" className="form-control" name="productionUnity" value={this.state.productionUnity} onChange={this.handleChange}/>
+                            <label className="control-label">Unid. de Prod. 1</label>
+                            <input type="text" className="form-control" name="productionUnity1" value={this.state.productionUnit1} onChange={this.handleChange}/>
+                    </div>
+               </div>
+               <div className="col-sm-3">
+               <div className="form-group">
+                            <label className="control-label">Producción 1</label>
+                            <input type="text" className="form-control" name="productionQuantity1" value={this.state.productionQuantity1} onChange={this.handleChange}/>
+                    </div>
+               </div>
+               <div className="col-sm-3">
+               <div className="form-group">
+                            <label className="control-label">Unid. de Prod. 2</label>
+                            <input type="text" className="form-control" name="productionUnity2" value={this.state.productionUnit2} onChange={this.handleChange}/>
+                    </div>
+               </div>
+               <div className="col-sm-3">
+               <div className="form-group">
+                            <label className="control-label">Producción 2</label>
+                            <input type="text" className="form-control" name="productionQuantity2" value={this.state.productionQuantity2} onChange={this.handleChange}/>
                     </div>
                </div>
                <div className="col-sm-3">

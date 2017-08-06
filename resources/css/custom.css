@@ -121,7 +121,7 @@ hr{
 	margin-bottom: 0;
 	border-radius: 0;
 	border:none;
-	margin-top: 62px;
+	margin-top: 30px;
 	background-color: transparent;
 }
 
@@ -221,6 +221,10 @@ textarea.form-control{
 	margin-bottom: 20px;
 }
 
+option, .rdtPicker {
+    color: #000;
+}
+
 .rdt-container {
     position: relative;
 }
@@ -288,7 +292,8 @@ textarea.form-control{
 }
 
 .carousel.slide{
-	margin-bottom: 77px;
+	margin-bottom: 30px;
+	height: 300px;
 }
 
 .carousel-caption{
@@ -299,6 +304,10 @@ textarea.form-control{
 
 .carousel-indicators .active{
 	background-color: #13D2D3;
+}
+
+.carousel-inner{
+	height: 300px;
 }
 
 .modules{
@@ -347,16 +356,15 @@ textarea.form-control{
 }
 
 .module-box ul{
-	display: none;
 	border-top: 1px solid #FFF;
 	padding-top: 10px;
 }
 
 .module-box ul li{
-	display: none;
 	list-style: none;
 	font-size: 21pt;
-	margin-left: -30px;	
+	margin-left: -30px;
+	color: #FFF;
 }
 
 .module-box.active ul{
@@ -370,13 +378,19 @@ textarea.form-control{
 	text-transform: none;
 }
 
+.module-box ul li a:hover{
+	font-family: AkzidenzGroteskBeSuper;
+	color: #FFF;
+	text-decoration: none;
+}
+
 .module-box.active ul li:hover, .module-box.active ul li a:hover{
 	font-family: AkzidenzGroteskBeSuper;
 }
 
 .module .module-title-container{
 	width: 100%;
-	padding-top: 50px;
+	padding-top: 20px;
 	padding-bottom: 20px;
 	margin-top: 20px;
 	margin-bottom: 40px;
@@ -391,17 +405,17 @@ textarea.form-control{
 }
 
 .module-title h3{
-	font-size: 29pt;
+	font-size: 18pt;
 	text-transform: uppercase;
 }
 
 .module-title h2{
 	font-family: AkzidenzGroteskBeSuper;
-	font-size: 36pt;
+	font-size: 28pt;
 }
 
 .module-title h4{
-	font-size: 23pt;
+	font-size: 16pt;
 }
 
 .module .function-button{

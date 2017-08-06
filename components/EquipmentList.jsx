@@ -32,7 +32,7 @@ class EquipmentList extends React.Component {
                         <div className="module-title">
                             <h3>Módulo</h3>
                             <h2>GESTIÓN ENERGÉTICA</h2>
-                            <h2>Diánostico</h2>
+                            <h2>Diánostico en gestión energética</h2>
                             <hr/>
                         </div>
                     </div>

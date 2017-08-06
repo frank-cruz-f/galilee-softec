@@ -38,8 +38,20 @@ class BillsDatatable extends React.Component {
 	    accessor: 'consumptionFee',
 	    filterable: false
 	  }, {
-	    Header: 'Unidad de Producción',
-	    accessor: 'productionUnity',
+	    Header: 'Unid de Prod 1',
+	    accessor: 'productionUnit1',
+	    filterable: false
+	  }, {
+	    Header: 'Producción 1',
+	    accessor: 'productionQuantity1',
+	    filterable: false
+	  }, {
+	    Header: 'Unid de Prod 2',
+	    accessor: 'productionUnit2',
+	    filterable: false
+	  }, {
+	  	Header: 'Producción 2',
+	    accessor: 'productionQuantity2',
 	    filterable: false
 	  }, {
 	    Header: 'Proveedor',

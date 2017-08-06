@@ -9,6 +9,7 @@ class BillsContainer extends React.Component {
 		this.state = { billsList: [] };
 
         this.createBill = this.createBill.bind(this);
+        this.deleteBill = this.deleteBill.bind(this);
         this.loadData = this.loadData.bind(this);
 	}
 
