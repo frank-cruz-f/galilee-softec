@@ -2,6 +2,7 @@
 const API_DOMAIN = "https://galilee-api.herokuapp.com/";
 const BILLS_BASE = API_DOMAIN + "bills";
 const EQUIPMENT_BASE = API_DOMAIN + "equipment";
+const CLIENTS_BASE = API_DOMAIN + "clients"
 
 const CLOUDINARY_UPLOAD_PRESET = 'default';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/frank18cr/image/upload';
@@ -24,7 +25,8 @@ const common = {
 		CREATE_EQUIPMENT: EQUIPMENT_BASE + "/createEquipment/",
 		DELETE_EQUIPMENT: EQUIPMENT_BASE + "/deleteEquipment/{equipmentId}",
 		CLOUDINARY_UPLOAD_PRESET: 'default',
-		CLOUDINARY_UPLOAD_URL: 'https://api.cloudinary.com/v1_1/frank18cr/image/upload'
+		CLOUDINARY_UPLOAD_URL: 'https://api.cloudinary.com/v1_1/frank18cr/image/upload',
+		CREATE_CLIENT: CLIENTS_BASE + "/createClient/"
 	}
 }
 
