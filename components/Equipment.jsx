@@ -46,6 +46,7 @@ class Equipment extends React.Component {
             mainEquipmentManuals: this.props.equipment.mainEquipmentManuals,
             equipmentOperationInfo: this.props.equipment.equipmentOperationInfo,
             equipmentMaintenanceProgram: this.props.equipment.equipmentMaintenanceProgram,
+            voltage: this.props.equipment.voltage
         });
     }
 
@@ -62,17 +63,17 @@ class Equipment extends React.Component {
                                 <div className="col-sm-4">
                                     <div className="form-group">
                                         <label className="control-label">Capacidad de int. princ.</label>
-                                        <input type="text" className="form-control" name="mainSwitchCapacity" value={this.state.mainSwitchCapacity} onChange={this.handleChange}/>
+                                        <input type="text" className="form-control" name="mainSwitchCapacity" value={this.props.equipment.mainSwitchCapacity} disabled={true}/>
                                     </div>
                                 </div>
                                 <div className="col-sm-4">
                                     <label className="control-label">Tipo</label><br/>
-                                    <Switch onChange={(el, state) => this.handleSwitch(el, state)} name="monophase" onText="Monofásico" offText="Trifásico"/>
+                                    <Switch name="monophase" onText="Monofásico" offText="Trifásico" defaultValue={this.props.equipment.equipmentMaintenanceProgram} disabled={true}/>
                                 </div>
                                 <div className="col-sm-4">
                                     <div className="form-group">
                                         <label className="control-label">Voltaje</label>
-                                        <input type="text" className="form-control" name="voltage" value={this.state.voltage} onChange={this.handleChange}/>
+                                        <input type="text" className="form-control" name="voltage" value={this.state.voltage} disabled={true}/>
                                     </div>
                                 </div>
                                 <div className="col-sm-12">
@@ -86,19 +87,19 @@ class Equipment extends React.Component {
                                     <div className="col-sm-4">
                                         <div className="form-group">
                                             <label className="control-label">Marca</label>
-                                            <input type="text" className="form-control" name="brand" data-equip-index={index} value={equip.brand} onChange={this.handleChange}/>
+                                            <input type="text" className="form-control" name="brand" data-equip-index={index} value={equip.brand} disabled={true}/>
                                         </div>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="form-group">
                                             <label className="control-label">Modelo</label>
-                                            <input type="text" className="form-control" name="model" data-equip-index={index} value={equip.model} onChange={this.handleChange}/>
+                                            <input type="text" className="form-control" name="model" data-equip-index={index} value={equip.model} disabled={true}/>
                                         </div>
                                     </div>
                                     <div className="col-sm-4">
                                         <div className="form-group">
                                             <label className="control-label">Capacidad</label>                                    
-                                            <input type="text" className="form-control" name="capacity" data-equip-index={index} value={equip.capacity} onChange={this.handleChange}/>
+                                            <input type="text" className="form-control" name="capacity" data-equip-index={index} value={equip.capacity} disabled={true}/>
                                             <p>Si no hay dato de placa</p>
                                         </div>
                                     </div>

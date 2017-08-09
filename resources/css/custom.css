@@ -468,3 +468,7 @@ option, .rdtPicker {
 .modal-dialog .list-box{
 	color: #000;
 }
+
+.modal-dialog input.form-control[type="text"], .modal-dialog textarea.form-control, .modal-dialog select.form-control{
+	color: #000;
+}

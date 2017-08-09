@@ -78,27 +78,32 @@ class EquipmentContainer extends React.Component {
     uploadImages(images, callback){
         var result = [];
         var imagesProcessed = 0;
-        images.forEach(img => {
-            
-            let upload = request.post(common.services.CLOUDINARY_UPLOAD_URL)
-                            .field('upload_preset', common.services.CLOUDINARY_UPLOAD_PRESET)
-                            .field('file', img);
+        if(images != ""){
+            images.forEach(img => {
+                
+                let upload = request.post(common.services.CLOUDINARY_UPLOAD_URL)
+                                .field('upload_preset', common.services.CLOUDINARY_UPLOAD_PRESET)
+                                .field('file', img);
 
-            upload.end((err, response) => {
-              if (err) {
-                console.error(err);
-              }
+                upload.end((err, response) => {
+                  if (err) {
+                    console.error(err);
+                  }
 
-              if (response.body.secure_url !== '') {
-                imagesProcessed++;
-                result.push(response.body.url);
-                if(imagesProcessed === images.length){
-                    callback(result);
-                }
-              }
+                  if (response.body.secure_url !== '') {
+                    imagesProcessed++;
+                    result.push(response.body.url);
+                    if(imagesProcessed === images.length){
+                        callback(result);
+                    }
+                  }
+                });
+                
             });
-            
-        });
+        }
+        else{
+            callback(result);
+        }
     }
 }
 module.exports = EquipmentContainer;

@@ -134,7 +134,7 @@ class CreateBill extends React.Component {
                <div className="col-sm-3">
                <div className="form-group">
                             <label className="control-label">Unid. de Prod. 1</label>
-                            <input type="text" className="form-control" name="productionUnity1" value={this.state.productionUnit1} onChange={this.handleChange}/>
+                            <input type="text" className="form-control" name="productionUnit1" value={this.state.productionUnit1} onChange={this.handleChange}/>
                     </div>
                </div>
                <div className="col-sm-3">
@@ -146,7 +146,7 @@ class CreateBill extends React.Component {
                <div className="col-sm-3">
                <div className="form-group">
                             <label className="control-label">Unid. de Prod. 2</label>
-                            <input type="text" className="form-control" name="productionUnity2" value={this.state.productionUnit2} onChange={this.handleChange}/>
+                            <input type="text" className="form-control" name="productionUnit2" value={this.state.productionUnit2} onChange={this.handleChange}/>
                     </div>
                </div>
                <div className="col-sm-3">
