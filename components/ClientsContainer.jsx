@@ -6,7 +6,7 @@ const Clients = require("./Clients");
 class ClientsContainer extends React.Component {
 	constructor(){
 		super();
-		this.state = { clients: [] };
+		this.state = { clients: [], clientsNames: []};
 
         this.createClient = this.createClient.bind(this);
         this.deleteClient = this.deleteClient.bind(this);
@@ -24,7 +24,7 @@ class ClientsContainer extends React.Component {
     }
 
     createClient(clientData){
-        var clientsURL = common.services.CREATE_BILL;
+        var clientsURL = common.services.CREATE_CLIENT;
 
         fetch(clientsURL, {
             method: 'post', 
@@ -44,7 +44,7 @@ class ClientsContainer extends React.Component {
     }
 
     deleteClient(clientId){
-        var clientsURL = common.services.DELETE_BILL.replace("{clientId}", clientId);
+        var clientsURL = common.services.DELETE_CLIENT.replace("{clientId}", clientId);
 
         fetch(clientsURL, {
             method: 'delete'
@@ -68,7 +68,8 @@ class ClientsContainer extends React.Component {
     	  return response.json();
     	})
     	.then((responseJson) => {
-    	  this.setState({clients: responseJson.data});
+          this.setState({clients: responseJson.data});
+
     	}).catch(function(err) {
     	  // Error :(
     	});

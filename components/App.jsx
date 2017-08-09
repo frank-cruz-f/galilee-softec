@@ -1,7 +1,7 @@
 const NavBar = require('./NavBar');
 const MainContainer = require("./MainContainer");
 const Diagnostic = require('./Diagnostic');
-const Clients = require('./Clients');
+const ClientsContainer = require('./ClientsContainer');
 const BillsContainer = require('./BillsContainer');
 const EquipmentContainer = require('./EquipmentContainer');
 const Results = require('./Results');
@@ -28,7 +28,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={MainContainer}/>
       <Route path="diagnostic" component={Diagnostic}></Route>
-      <Route path="diagnostic/clients" component={Clients}></Route>
+      <Route path="diagnostic/clients" component={ClientsContainer}></Route>
       <Route path="diagnostic/bills" component={BillsContainer}></Route>
       <Route path="diagnostic/equipment" component={EquipmentContainer}></Route>
       <Route path="diagnostic/results" component={Results}></Route>
