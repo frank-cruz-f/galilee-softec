@@ -14,7 +14,19 @@ class CreateBill extends React.Component {
             consumption: "",
             provider: "",
             cost: "",
-            comments: ""
+            comments: "",
+            consumptionUnit: "",
+            consumptionType: "",
+            consumptionFee: "",
+            productionUnit: "",
+            biomassType:"",
+            createOptions: {
+              showTextProvider: false,
+              showFee:false,
+              consumptionUnitOptions: [],
+              showProvider: false,
+              showBiomassType: false
+            }
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -41,16 +53,91 @@ class CreateBill extends React.Component {
             provider: "",
             cost: "",
             comments: "",
-            consumptionUnity: "",
+            consumptionUnit: "",
             consumptionType: "",
             consumptionFee: "",
-            productionUnity: ""
+            productionUnit1: "",
+            productionUnit2: "",
+            productionQuantity1: "",
+            productionQuantity2: "",
+            createOptions: {
+              showTextProvider: false,
+              showFee:false,
+              consumptionUnitOptions: [],
+              showProvider: false,
+              showBiomassType: false
+            }
         });
     }
 
     handleChange(e){
         if(e._isAMomentObject){
             this.setState({period: e.toISOString()});
+        }
+        else if(e.target.name === "consumptionType"){
+            this.setState({[e.target.name]: e.target.value});
+            if(e.target.value === "Electricidad"){
+              this.setState({"createOptions": {
+                showFee: true,
+                consumptionUnitOptions: [
+                  "N/A",
+                  "KWH",
+                  "KW",
+                  "F.P."
+                ],
+                showTextProvider:false,
+                showProvider: true,
+                showBiomassType: false
+              }})
+            }
+            else if(e.target.value === "Gas"){
+              this.setState({"createOptions": {
+                showFee: false,
+                consumptionUnitOptions: [
+                  "N/A",
+                  "L",
+                  "M3"
+                ],
+                showTextProvider:true,
+                showProvider: true,
+                showBiomassType: false
+              }})
+            }
+            else if(e.target.value === "Agua"){
+              this.setState({"createOptions": {
+                showFee: false,
+                consumptionUnitOptions: [
+                  "M3"
+                ],
+                showTextProvider:true,
+                showProvider: true,
+                showBiomassType: false
+              }})
+            }
+            else if(e.target.value === "Diesel" || e.target.value === "Bunker"){
+              this.setState({"createOptions": {
+                showFee: false,
+                consumptionUnitOptions: [
+                  "N/A",
+                  "L"
+                ],
+                showTextProvider:false,
+                showProvider: false,
+                showBiomassType: false
+              }})
+            }
+              else if(e.target.value === "Biomasa"){
+              this.setState({"createOptions": {
+                showFee: false,
+                consumptionUnitOptions: [
+                  "N/A",
+                  "M3"
+                ],
+                showTextProvider:true,
+                showProvider: true,
+                showBiomassType: true
+              }})
+            }
         }
         else{
             this.setState({[e.target.name]: e.target.value});
@@ -73,6 +160,27 @@ class CreateBill extends React.Component {
                         </div>
                </div>
                <div className="col-sm-3">
+                 <div className="form-group">
+                  <label className="control-label">Tipo de Factura</label>
+                  <select name="consumptionType" id="" className="form-control" value={this.state.consumptionType} onChange={this.handleChange}>
+                    <option>--</option>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Agua">Agua</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Bunker">Bunker</option>
+                    <option value="Biomasa">Biomasa</option>
+                  </select>
+                 </div>
+               </div>
+               {this.state.createOptions.showBiomassType && <div className="col-sm-3">
+               <div className="form-group">
+               <label className="control-label">Tipo de biomasa</label>
+               <input type="text" className="form-control" name="biomassType" value={this.state.biomassType} onChange={this.handleChange}/>
+               </div>
+               </div>
+               }
+               <div className="col-sm-3">
                 <div className="form-group">
                             <label className="control-label">Consumo</label>
                             <input type="text" className="form-control" name="consumption" value={this.state.consumption} onChange={this.handleChange}/>
@@ -81,35 +189,17 @@ class CreateBill extends React.Component {
                <div className="col-sm-3">
                     <div className="form-group">
                             <label className="control-label">Unid. de Consumo</label>
-                            <select name="" id="" className="form-control" name="consumptionUnity" value={this.state.consumptionUnity} onChange={this.handleChange}>
-                                <option value="">--</option>
-                                <option value="l">litros</option>
-                                <option value="kw">kw</option>
-                                <option value="kwh">kwh</option>
-                                <option value="fp">fp.</option>
-                                <option value="m3">m3</option>
+                            <select className="form-control" name="consumptionUnit" value={this.state.consumptionUnit} onChange={this.handleChange}>
+                                {this.state.createOptions.consumptionUnitOptions.map((option) => {
+                                  return <option value={option}>{option}</option>
+                                })}
                             </select>
                     </div>
                 </div>
-               <div className="col-sm-3">
-               <div className="form-group">
-                            <label className="control-label">Tipo de Consumo</label>
-                            <select name="" id="" className="form-control" name="consumptionType" value={this.state.consumptionType} onChange={this.handleChange}>
-                                <option value="">--</option>
-                                <option value="gas">gas</option>
-                                <option value="bunker">bunker</option>
-                                <option value="diesel">diesel</option>
-                                <option value="gasolina">gasolina</option>
-                                <option value="madera">madera</option>
-                                <option value="agua">agua</option>
-                                <option value="electricidad">electricidad</option>
-                            </select>
-                    </div>
-               </div>
-               <div className="col-sm-3">
+               {this.state.createOptions.showFee && <div className="col-sm-3">
                <div className="form-group">
                             <label className="control-label">Tarifa</label>
-                            <select name="" id="" className="form-control" name="consumptionFee" value={this.state.consumptionFee} onChange={this.handleChange}>
+                            <select className="form-control" name="consumptionFee" value={this.state.consumptionFee} onChange={this.handleChange}>
                                 <option value="">--</option>
                                 <option value="T-CO">T-CO</option>
                                 <option value="T-IN">T-IN</option>
@@ -119,18 +209,29 @@ class CreateBill extends React.Component {
                             </select>
                     </div>
                </div>
-               <div className="col-sm-3">
+               }
+               {this.state.createOptions.showProvider && <div className="col-sm-3">
                 <div className="form-group">
                             <label className="control-label">Proveedor</label>
-                            <select name="" id="" className="form-control" name="provider" value={this.state.provider} onChange={this.handleChange}>
+                            {!this.state.createOptions.showTextProvider && <select id="" className="form-control" name="provider" value={this.state.provider} onChange={this.handleChange}>
                                 <option value="">--</option>
-                                <option value="Jasec">Jasec</option>
                                 <option value="ICE">ICE</option>
                                 <option value="CNFL">CNFL</option>
-                                <option value="AyA">AyA</option>
+                                <option value="JASEC">JASEC</option>
+                                <option value="ESPH">ESPH</option>
+                                <option value="COOPELESCA">COOPELESCA</option>
+                                <option value="COOPEGUANACASTE">COOPEGUANACASTE</option>
+                                <option value="COOPEALFARO">COOPEALFARO</option>
+                                <option value="COOPESANTOS">COOPESANTOS</option>
+
+                                ICE, CNFL, JASEC, ESPH, COOPELESCA, COOPEGUANACASTE, COOPEALFARO, COOPESANTOS
                             </select>
+                            }
+
+                            {this.state.createOptions.showTextProvider && <input type="text" className="form-control" name="provider" value={this.state.provider} onChange={this.handleChange}/>}
                         </div>
                </div>
+               }
                <div className="col-sm-3">
                <div className="form-group">
                             <label className="control-label">Unid. de Prod. 1</label>

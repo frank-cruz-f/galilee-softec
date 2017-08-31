@@ -28,10 +28,10 @@ class BillsDatatable extends React.Component {
 	    filterable: false
 	  }, {
 	    Header: 'Unidad de Consumo',
-	    accessor: 'consumptionUnity'
+	    accessor: 'consumptionUnit'
 	  }, {
 	    Header: 'Tipo de Consumo',
-	    accessor: 'consumption',
+	    accessor: 'consumptionType',
 	    filterable: false
 	  }, {
 	    Header: 'Tarifa',
